@@ -38,7 +38,7 @@ export default function Menu() {
           <img src="/logo.png" alt="Logo Pizzaria" />
         </a>
 
-        <Link>
+        <Link to="/home">
           <FaWhatsapp />
           Contact
         </Link>
