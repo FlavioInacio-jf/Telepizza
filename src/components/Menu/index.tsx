@@ -34,11 +34,11 @@ export default function Menu() {
         }
 
 
-        <a className={styles.logo} href="/">
+        <a className={styles.logo} href="/home">
           <img src="/logo.png" alt="Logo Pizzaria" />
         </a>
 
-        <Link to="/home">
+        <Link to={'home'}>
           <FaWhatsapp />
           Contact
         </Link>
