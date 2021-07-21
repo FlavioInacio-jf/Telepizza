@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { FaHome, FaPizzaSlice, FaInfo, FaTruckLoading, FaBars, FaTimes, FaWhatsapp } from 'react-icons/fa';
 
 import Link from '../Link';
+
+import Button from '../Button';
 import styles from './Menu.module.scss';
 
 export default function Menu() {
@@ -25,10 +27,10 @@ export default function Menu() {
             <nav className={styles.nav} onClick={handleShowMenu}>
               <div className="styles.wrap">
                 <div className={'grid ' + styles.navbar}>
-                  <a href="#" className="current-page"><FaHome className={styles.iconDistance} />Home</a>
-                  <a href="#"><FaPizzaSlice className={styles.iconDistance} />Menu</a>
-                  <a href="#"><FaTruckLoading className={styles.iconDistance} />Delivery</a>
-                  <a href="#"><FaInfo className={styles.iconDistance} />About</a>
+                  <Link to="/" className="current-page"><FaHome className={styles.iconDistance} />Home</Link>
+                  <Link to="#"><FaPizzaSlice className={styles.iconDistance} />Menu</Link>
+                  <Link to="#"><FaTruckLoading className={styles.iconDistance} />Delivery</Link>
+                  <Link to="#"><FaInfo className={styles.iconDistance} />About</Link>
                 </div>
               </div>
             </nav>
@@ -40,10 +42,10 @@ export default function Menu() {
           <Image src={'/logo.png'}  alt="Logo Pizzaria" objectFit="contain"  layout="fill" className={styles.logo}/>
         </a>
 
-        <Link to={'https://api.whatsapp.com/send?phone=79992504020&text=Olá%20,%20Bem-vindo%20a%20melhor pizzaria%20do%20pais!!'} target="_blank">
+        <Button to={'https://api.whatsapp.com/send?phone=79992504020&text=Olá%20,%20Bem-vindo%20a%20melhor pizzaria%20do%20pais!!'} target="_blank">
           <FaWhatsapp />
           Contact
-        </Link>
+        </Button>
 
       </div>
     </header>
