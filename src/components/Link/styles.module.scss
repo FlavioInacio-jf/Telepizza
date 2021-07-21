@@ -1,0 +1,21 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--colorPrimary);
+  color: var(--colorPrimary);
+
+  cursor: pointer;
+  padding: .375rem .75rem;
+  border-radius: 0.25rem;
+
+  font: 400 1rem Lexend, sans-serif;
+  line-height: 1.5;
+  white-space: nowrap;
+
+  transition: background 0.7s;
+  &:hover {
+    background: var(--colorPrimary);
+    color: var(--textSecondaryColor);
+  }
+}

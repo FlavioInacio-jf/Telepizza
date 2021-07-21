@@ -1,0 +1,87 @@
+#header {
+  width: 100%;
+  background: var(--backgroundSecondary);
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+  }
+  .logo {
+    width: 6.25rem;
+  }
+  .nav {
+    position: fixed;
+    left: 0;
+    top: 4.1rem;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(51, 51, 51, 0.7);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    z-index: 100;
+    > div {
+      width: 70vw;
+      height: 100vh;
+      padding: 1.5rem;
+      background: var(--backgroundPrimary);
+
+      z-index: 999;
+      animation: fade-in-left 0.2s linear;
+    }
+    .navbar {
+      font: 700 1rem Lexend, sans-serif;
+      color: var(--textPrimaryColor);
+      text-align: left;
+      a {
+        position: relative;
+
+        .iconDistance {
+          margin-right: 1rem;
+        }
+        &::after {
+          content: "";
+          width: 0%;
+          height: 0.25rem;
+
+          margin-top: 0.5rem;
+
+          display: block;
+
+          background: var(--colorPrimary);
+          transition: width 0.3s;
+        }
+        &:hover {
+          color: var(--colorPrimary);
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .menuBarButton {
+    font-size: 1.5rem;
+    outline: none;
+  }
+}
+
+
+//Animation
+@keyframes fade-in-left {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
