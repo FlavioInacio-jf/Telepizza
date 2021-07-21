@@ -38,9 +38,9 @@ export default function Menu() {
         }
 
 
-        <a className={styles.logoContainer} href="/">
+        <Link className={styles.logoContainer} to="/">
           <Image src={'/logo.png'}  alt="Logo Pizzaria" objectFit="contain"  layout="fill" className={styles.logo}/>
-        </a>
+        </Link>
 
         <Button to={'https://api.whatsapp.com/send?phone=79992504020&text=Olá%20,%20Bem-vindo%20a%20melhor pizzaria%20do%20pais!!'} target="_blank">
           <FaWhatsapp />
