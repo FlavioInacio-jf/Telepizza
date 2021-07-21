@@ -36,14 +36,26 @@ button {
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1199.98px) {
   html {
     font-size: 93.75%;
   }
 }
-@media (max-width: 720px) {
+@media (max-width: 991.98px) {
   html {
     font-size: 87.5%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  html {
+    font-size: 81.25%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  html {
+    font-size: 75%;
   }
 }
 
