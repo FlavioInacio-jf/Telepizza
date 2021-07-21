@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Image from 'next/image';
+
 import { FaHome, FaPizzaSlice, FaInfo, FaTruckLoading, FaBars, FaTimes, FaWhatsapp } from 'react-icons/fa';
 
 import Link from '../Link';
@@ -35,7 +37,7 @@ export default function Menu() {
 
 
         <a className={styles.logo} href="/home">
-          <img src="/logo.png" alt="Logo Pizzaria" />
+          <Image src={'/logo.png'} alt="Logo Pizzaria" layout="fill"/>
         </a>
 
         <Link to={'home'}>
