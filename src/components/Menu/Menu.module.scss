@@ -8,8 +8,17 @@
     justify-content: space-between;
     padding: 0.5rem 0;
   }
-  .logo {
-    width: 6.25rem;
+  .logoContainer {
+    width: 100%;
+
+    > div {
+      position: unset !important;
+    }
+    .logo {
+      width: 1rem;
+      position: relative !important;
+      height: 3.5rem !important;
+    }
   }
   .nav {
     position: fixed;

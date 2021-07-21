@@ -36,8 +36,8 @@ export default function Menu() {
         }
 
 
-        <a className={styles.logo} href="/home">
-          <Image src={'/logo.png'} alt="Logo Pizzaria" layout="fill"/>
+        <a className={styles.logoContainer} href="/home">
+          <Image src={'/logo.png'}  alt="Logo Pizzaria" objectFit="contain"  layout="fill" className={styles.logo}/>
         </a>
 
         <Link to={'home'}>
