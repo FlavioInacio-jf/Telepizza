@@ -78,7 +78,9 @@ html {
   --textSecondaryColor: #FFFFFF;
   --textTertiaryColor: #5A5A5A;
   --textQuarternaryColor: #C5C6CA;
-  --commonRadius: 0.5rem;
+
+  --transition-hover: 0.7s;
+  --commonRadius: 0.3125rem;
 }
 body {
   font: 400 1rem Inter, sans-serif;

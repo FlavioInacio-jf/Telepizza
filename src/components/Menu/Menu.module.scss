@@ -8,6 +8,7 @@
     justify-content: space-between;
     padding: 0.5rem 0;
   }
+
   .logoContainer {
     width: 100%;
 
@@ -19,10 +20,16 @@
       height: 3.5rem !important;
     }
   }
+
+  .menuBarButton {
+    font-size: 1.5rem;
+    outline: none;
+  }
+
   .nav {
     position: fixed;
     left: 0;
-    top: 4.1rem;
+    top: 4.5rem;
 
     width: 100vw;
     height: 100vh;
@@ -63,7 +70,7 @@
           display: block;
 
           background: var(--colorPrimary);
-          transition: width 0.3s;
+          transition: width var(--transition-hover);
         }
         &:hover {
           color: var(--colorPrimary);
@@ -75,10 +82,6 @@
     }
   }
 
-  .menuBarButton {
-    font-size: 1.5rem;
-    outline: none;
-  }
 }
 
 

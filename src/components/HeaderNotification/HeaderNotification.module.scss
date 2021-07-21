@@ -1,0 +1,34 @@
+.headerNotification {
+  background: var(--colorSecondary);
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 0.5rem;
+    display: block;
+    background: linear-gradient(to left, var(--colorPrimary), var(--colorSecondary), var(--colorTertiary), var(--colorQuarternary));
+  }
+  .notificationBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    font: 400 1rem Lexend, sans-serif;
+    color: var(--textSecondaryColor);
+    line-height: 1.5;
+
+    padding: 1rem 0;
+    
+    strong {
+      font-weight: 700;
+    }
+  }
+  button {
+    font-size: 1.5rem;
+    color: var(--backgroundPrimary);
+    transition: color var(--transition-hover);
+    &:hover {
+      color: var(--colorPrimary)
+    }
+  }
+}

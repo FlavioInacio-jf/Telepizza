@@ -7,13 +7,13 @@
 
   cursor: pointer;
   padding: .375rem .75rem;
-  border-radius: 0.25rem;
+  border-radius: var(--commonRadius);
 
-  font: 400 1rem Lexend, sans-serif;
+  font: 400 1rem Inter, sans-serif;
   line-height: 1.5;
   white-space: nowrap;
 
-  transition: background 0.7s;
+  transition: background var(--transition-hover);
   &:hover {
     background: var(--colorPrimary);
     color: var(--textSecondaryColor);
