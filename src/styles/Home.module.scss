@@ -1,4 +1,6 @@
 #main {
+  display: flex;
+  flex-direction: column;
 
   .introduction {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
@@ -8,12 +10,12 @@
 
 
     .bannerIntroduction {
-      font: 400 1rem Lexend, sans-serif;
+      font: 400 1rem Inter, sans-serif;
       color: rgba(255, 255, 255, 0.8);
       text-align: center;
 
       .titleBanner {
-        font: 700 2rem Lexend, sans-serif;
+        font: 700 2rem Inter, sans-serif;
         text-transform: uppercase;
         display: inline-block;
 
@@ -43,6 +45,38 @@
         display: flex;
         justify-content: center;
         gap: 1rem;
+      }
+    }
+  }
+
+
+  .portfolio {
+    width: 100%;
+
+    .cards {
+      padding-top: 2rem;
+
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      gap: 1.25rem;
+    }
+
+    .callAction {
+      padding-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      gap: 1.5rem;
+
+      p {
+        font: 500 1.125rem Lexend, sans-serif;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 1.5;
+        color: var(--textPrimaryColor);
       }
     }
   }

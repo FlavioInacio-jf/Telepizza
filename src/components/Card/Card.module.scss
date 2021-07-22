@@ -1,3 +1,78 @@
 .box {
-  background: red;
+  background: var(--backgroundSecondary);
+  border-radius: var(--commonRadius);
+  box-shadow: 1px 1px var(    --backgroundPrimary);
+  width: 100%;
+
+  .boxHeader {
+
+    width: 100%;
+    > div {
+      border-radius: var(--commonRadius) var(--commonRadius)  0 0;
+      position: unset !important;
+    }
+    img {
+      width: 100% !important;
+      display: block;
+      position: relative !important;
+      height: auto !important;
+      max-height: 300px !important;
+    }
+
+  }
+
+  .boxBody {
+    border: 1px solid var(--textQuarternaryColor);
+    border-radius: 0 0 var(--commonRadius) var(--commonRadius);
+    border-top: none;
+    padding: 1rem;
+
+    h4 {
+      font: 700 1.25rem Lexend, sans-serif;
+      text-transform: uppercase;
+      color: var(--textPrimaryColor);
+      text-align: center;
+      line-height: 1.5;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 15%;
+        height: 0.25rem;
+
+        margin: 0 auto;
+        margin-top: .25rem;
+
+        border-radius: var(--commonRadius);
+        background: var(--textPrimaryColor);
+      }
+    }
+
+    .boxContent {
+
+      P {
+        font: 400 1.125rem Lexend, sans-serif;
+        color: var(--textPrimaryColor);
+        padding-top: 1rem;
+      }
+      .boxPrice {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-top: 0.5rem;
+
+        .priceNew {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: var(--colorPrimary);
+        }
+
+        .priceOld {
+          font-size: 1rem;
+          text-decoration: line-through;
+          color: var(--textTertiaryColor);
+        }
+      }
+    }
+  }
 }

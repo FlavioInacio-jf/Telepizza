@@ -1,30 +1,32 @@
 import Image from 'next/image';
-import styles from './Box.module.scss';
+import styles from './Card.module.scss';
 
 type CardProps = {
-  imageUrl: string;
-  title: string;
-  priceOld?: string;
-  priceNew: string;
-  description: string;
+  data: {
+    imageUrl: string;
+    title: string;
+    priceOld: string;
+    priceNew: string;
+    description: string;
+  }
 }
 
-export default function Card({imageUrl, title, priceOld, priceNew}: CardProps) {
+export default function Card({data}: CardProps) {
   return (
     <>
       <div className={styles.box}>
         <header className={styles.boxHeader}>
-          <Image src='/' alt={title} width={300} height={300} />
+          <Image src={data.imageUrl}  alt={data.title} objectFit='fill' layout="fill" />
         </header>
 
         <div className={styles.boxBody}>
-          <h4>Calabresa</h4>
+          <h4>{data.title}</h4>
           <div className={styles.boxContent}>
             <p>
-              Mussarela, calabresa, cebola e milho
+              {data.description}
             </p>
             <div className={styles.boxPrice}>
-              <span className={styles.priceOld}>R$ 1000,00</span> <span className={styles.priceNew}>R$ 200,00</span>
+              <span className={styles.priceOld}>R$ {data.priceOld || ""}</span> <span className={styles.priceNew}>R$ {data.priceNew}</span>
             </div>
           </div>
         </div>

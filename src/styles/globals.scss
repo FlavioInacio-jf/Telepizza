@@ -80,7 +80,7 @@ html {
   --textQuarternaryColor: #C5C6CA;
 
   --transition-hover: 0.7s;
-  --commonRadius: 0.3125rem;
+  --commonRadius: 0.5rem;
 }
 body {
   font: 400 1rem Inter, sans-serif;
@@ -100,7 +100,7 @@ body {
   gap: 1.75rem;
 }
 .section {
-  padding: 5rem 0;
+  padding-top: 1.5rem;
 }
 
 .btn {
@@ -121,6 +121,16 @@ body {
   white-space: nowrap;
 
   transition: background var(--transition-hover);
+  &.btn-yellow {
+    font-size: 1.25rem;
+    font-weight: 700;
+    border: var(--colorSecondary);
+    background: var(--colorSecondary);
+  }
+
+  &.cta {
+    padding: .5rem 1rem;
+  }
 
   &.btn-outline {
     background: none;
@@ -136,4 +146,30 @@ body {
   &:hover {
     filter: brightness(0.8);
   }
+}
+
+.title {
+  font: 700 1.5rem Inter, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: var(--colorPrimary);
+
+  &::after {
+    content: "";
+    display: block;
+    width: 20%;
+    height: 0.25rem;
+
+    margin: 0 auto;
+    margin-top: .25rem;
+
+    border-radius: var(--commonRadius);
+    background: var(--colorPrimary);
+  }
+}
+
+.callAction {
+  text-align: center;
+  padding: 1.5rem 0;
 }

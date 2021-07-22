@@ -1,6 +1,7 @@
 module.exports = {
   reactStrictMode: true,
+  images: {
+    domains: ['images.unsplash.com'],
+  },
 }
 
-const withImages = require('next-images');
-module.exports = withImages();
