@@ -102,3 +102,38 @@ body {
 .section {
   padding: 5rem 0;
 }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  border: 1px solid var(--colorPrimary);
+  color: var(--textSecondaryColor);
+  background: var(--colorPrimary);
+
+  cursor: pointer;
+  padding: .375rem .75rem;
+  border-radius: var(--commonRadius);
+
+  font: 400 1rem Inter, sans-serif;
+  line-height: 1.5;
+  white-space: nowrap;
+
+  transition: background var(--transition-hover);
+
+  &.btn-outline {
+    background: none;
+    border-color: var(--textSecondaryColor);
+    color: var(--textSecondaryColor);
+
+    &:hover {
+      background: none;
+      color: none;
+      filter: brightness(0.8);
+    }
+  }
+  &:hover {
+    filter: brightness(0.8);
+  }
+}

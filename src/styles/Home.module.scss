@@ -1,6 +1,53 @@
 #main {
-  background: url(../../public/food-pizza.jpeg) left ;
-  background-size: cover;
+
+  .introduction {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+                url(../../public/food-pizza.jpeg) no-repeat center center;
+    background-size: cover;
+    padding: 7.5rem 0;
+
+
+    .bannerIntroduction {
+      font: 400 1rem Lexend, sans-serif;
+      color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+
+      .titleBanner {
+        font: 700 2rem Lexend, sans-serif;
+        text-transform: uppercase;
+        display: inline-block;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 30%;
+          height: 0.25rem;
+
+          margin: 0 auto;
+          margin-top: .25rem;
+
+          border-radius: var(--commonRadius);
+          background: var(--backgroundSecondary);
+        }
+      }
+
+      p {
+        color: var(--textQuarternaryColor);
+        padding-top: 1.5rem;
+        font-size: 1.125rem;
+        line-height: 1.5;
+      }
+      .bannerIntroductionFooter {
+        padding-top: 1.5rem;
+
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+  }
+
+
 }
 
 .footer {
