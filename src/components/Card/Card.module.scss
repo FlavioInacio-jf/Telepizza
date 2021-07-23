@@ -28,7 +28,7 @@
     padding: 1rem;
 
     h4 {
-      font: 700 1.25rem Lexend, sans-serif;
+      font: 700 1.125rem Lexend, sans-serif;
       text-transform: uppercase;
       color: var(--textPrimaryColor);
       text-align: center;
@@ -38,7 +38,7 @@
         content: "";
         display: block;
         width: 15%;
-        height: 0.25rem;
+        height: 0.125rem;
 
         margin: 0 auto;
         margin-top: .25rem;
@@ -51,7 +51,7 @@
     .boxContent {
 
       P {
-        font: 400 1.125rem Lexend, sans-serif;
+        font: 400 1rem Lexend, sans-serif;
         color: var(--textPrimaryColor);
         padding-top: 1rem;
       }
@@ -62,13 +62,13 @@
         padding-top: 0.5rem;
 
         .priceNew {
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           font-weight: 700;
           color: var(--colorPrimary);
         }
 
         .priceOld {
-          font-size: 1rem;
+          font-size: 0.875rem;
           text-decoration: line-through;
           color: var(--textTertiaryColor);
         }

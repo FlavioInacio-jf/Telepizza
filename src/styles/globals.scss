@@ -149,7 +149,7 @@ body {
     content: "";
     display: block;
     width: 20%;
-    height: 0.25rem;
+    height: 0.125rem;
 
     margin: 0 auto;
     margin-top: .25rem;
@@ -162,4 +162,16 @@ body {
 .callAction {
   text-align: center;
   padding: 1.5rem 0;
+}
+
+.logoContainer {
+  width: 100%;
+
+  > div {
+    position: unset !important;
+  }
+  img {
+    position: relative !important;
+    height: 3.5rem !important;
+  }
 }

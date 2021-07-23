@@ -1,0 +1,69 @@
+.quote {
+
+  background: var(--colorSecondary);
+  color: var(--textSecondaryColor);
+  border-radius: var(--commonRadius);
+
+  p {
+    font: 400 1rem Lexend, sans-serif;
+    line-height: 1.5;
+    padding: 1rem;
+
+    position: relative;
+  }
+
+  cite {
+    display: flex;
+    justify-content: flex-start;
+
+    gap: 0.5rem;
+    background: var(--textSecondaryColor);
+    color: var(--textPrimaryColor);
+    padding-top: 1.5rem;
+    position: relative;
+    border: 1px solid var(--colorSecondary);
+    border-top: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    &::after {
+      content: " ";
+      border: 20px solid transparent;
+      border-top-color: var(--colorSecondary);
+      position: absolute;
+      top: 0;
+      left: 1.4rem;
+      display: inline-block;
+
+    }
+
+    .logoContainer {
+
+      > div {
+        position: unset !important;
+      }
+
+      img {
+        position: relative !important;
+        width: 3.5rem !important;
+        height: 3.5rem !important;
+        clip-path: circle();
+      }
+    }
+
+    .cite {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      span {
+        font: 700 1rem Lexend, sans-serif;
+
+        &:last-child {
+          font-style: italic;
+          color: var(--textTertiaryColor);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
