@@ -13,7 +13,7 @@ export default function Contact() {
       <Menu />
 
       <main>
-        <section className={'section '+ styles.contact}>
+        <section className={'section '+ styles.about}>
           <div className="container">
             <h2 className="title">Make your Order</h2>
             <p className="contact-details">
@@ -48,7 +48,7 @@ export default function Contact() {
 
                 <div className="wrap-order">
                   <label>Comments/Questions</label>
-                  
+
                 </div>
                 <div className="wrap-submit">
                   <button type="submit" className="btn">Enviar</button>
