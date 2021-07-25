@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head'
 import { FaChevronRight, FaAngleRight, FaTag, FaBolt } from 'react-icons/fa';
 
-import Carrousel from '../components/Carrousel';
+import Rodape from '../components/Rodape';
 import Menu from '../components/Menu';
 import Link from '../components/Link';
 import Card from '../components/Card';
@@ -12,11 +12,34 @@ import styles from '../styles/Home.module.scss';
 import Testimony from '../components/Testimony';
 import { useState, useEffect } from 'react';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Pagination, Autoplay, Navigation, A11y } from 'swiper/core';
+import 'swiper/swiper.min.css';
+import 'swiper/components/pagination/pagination.min.css';
+import 'swiper/components/scrollbar/scrollbar.min.css';
+
+SwiperCore.use([Navigation, Pagination, Autoplay, A11y]);
 
 export default function Home() {
 
   const [menu, setMenu] = useState([]);
   const [testimony, setTestimony] = useState([]);
+
+  const params = {
+    spaceBetween: 50,
+    slidesPerView: 1,
+    centeredSlides: true,
+    pagination: {
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      waitForTransition: true,
+    },
+    loop: true,
+    speed: 2000,
+  }
 
   useEffect(() => {
 
@@ -61,9 +84,8 @@ export default function Home() {
     });
 
   }, [])
-  console.log(testimony)
-  return (
 
+  return (
     <>
       <Head>
         <title>Pizzaria Inácio - Faça já o seu pedido</title>
@@ -152,28 +174,39 @@ export default function Home() {
           <div className="container">
             <h2 className="title">Testimonials</h2>
             <div className={styles.testimonia}>
-
+              <Swiper {...params}>
+                {testimony.map((clienteInformation) => {
+                  console.log(clienteInformation)
+                  return (
+                    <SwiperSlide key={clienteInformation.id}>
+                      <span><Testimony clienteInformation={clienteInformation} /></span>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
             </div>
           </div>
         </section>
 
-        <section className={'section ' + styles.banner}>
+        <section className={styles.banner}>
           <div className="container">
-            <h3 className="banner">Tele premium <br /> oferta!!!<br /></h3>
-            <div className="value">
-              <span className="real">
-                R$
-              </span>
-              <span className="price">
-                59,90
-              </span>
+            <div className={styles.bannerContent}>
+              <h3 className={styles.bannerTitle}>Tele premium <br /> oferta!!!<br /></h3>
+              <div className={styles.bannerValue}>
+                <span>
+                  R$
+                </span>
+                <span>
+                  59,90
+                </span>
+              </div>
             </div>
-
           </div>
-
         </section>
 
       </main>
+
+      <Rodape />
     </>
   )
 }

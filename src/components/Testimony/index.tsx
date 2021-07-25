@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 type TestimonyProps = {
   clienteInformation : {
-    id: number;
+    id: string;
     opinion: string;
     avatarurl: {
       url: string;
@@ -23,7 +23,7 @@ export default function Testimony ({clienteInformation}: TestimonyProps) {
         </div>
         <div className={styles.cite}>
           <span>{clienteInformation.author}</span>
-          <span>{clienteInformation.city}/{clienteInformation.state}</span>
+          <span>{clienteInformation.city}|{clienteInformation.state}</span>
         </div>
       </cite>
     </blockquote>

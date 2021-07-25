@@ -2,6 +2,7 @@
   background: var(--backgroundSecondary);
   border-radius: var(--commonRadius);
   width: 100%;
+  box-shadow: 1px 1px #f2f2f2;
 
   .boxHeader {
 
@@ -21,7 +22,7 @@
   }
 
   .boxBody {
-    border: 1px solid var(--borderColor);
+    border: 1px solid #f2f2f2;
     border-radius: 0 0 var(--commonRadius) var(--commonRadius);
     border-top: none;
     padding: 1rem;

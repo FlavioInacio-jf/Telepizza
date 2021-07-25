@@ -133,21 +133,35 @@
     .testimonia {
       padding-top: 2rem;
 
-      div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid var(--textPrimaryColor);
-        background: var(--textPrimaryColor);
-        border-radius: 1000px;
+    }
+  }
 
-        width: 200px;
-        height: 200px;
-        clip-path: circle();
+  .banner {
+    margin-top: 3rem;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)) ,url(../../public/pizza-rodape.jpg) no-repeat center center ;
+    background-size: cover;
 
+    .bannerContent {
+      max-width: 300px;
+      margin-left: auto;
+      padding: 7.5rem 0;
+
+      text-align: right;
+      color: var(--textSecondaryColor);
+
+      .bannerTitle {
+        font: 500 1.25rem Inter, sans-serif;
+        line-height: 1.5;
+        text-transform: uppercase;
+      }
+
+      .bannerValue {
+        font: 700 2rem Inter, sans-serif;
+        line-height: 1.5;
         span {
-          font-size: 5rem;
-          color: var(--colorPrimary);
+          &:first-child {
+            font-size: 1.5rem;
+          }
         }
       }
     }

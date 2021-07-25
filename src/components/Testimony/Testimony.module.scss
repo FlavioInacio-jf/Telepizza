@@ -1,14 +1,16 @@
 .quote {
-
-  background: var(--colorSecondary);
+  width: 100%;
+  height: 220px;
   color: var(--textSecondaryColor);
-  border-radius: var(--commonRadius);
+
 
   p {
+    border-radius: var(--commonRadius) var(--commonRadius) 0 0;
+    background: var(--colorSecondary);
     font: 400 1rem Lexend, sans-serif;
     line-height: 1.5;
     padding: 1rem;
-
+    word-wrap: break-word;
     position: relative;
   }
 
