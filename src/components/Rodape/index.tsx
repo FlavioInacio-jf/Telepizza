@@ -42,7 +42,7 @@ export default function Rodape() {
       <div className={styles.copy}>
         <div className="container">
           <p>
-            Copyright  `&copy;` 2021 - Todos os Direitos Reservados - TelePizza.com
+            Copyright &copy; 2021 - Todos os Direitos Reservados - TelePizza.com
           </p>
         </div>
       </div>

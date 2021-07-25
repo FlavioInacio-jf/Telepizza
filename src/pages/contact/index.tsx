@@ -1,6 +1,7 @@
 import Menu from "../../components/Menu";
 import Head from 'next/head';
 import styles from './Contact.module.scss';
+import Rodape from "../../components/Rodape";
 
 export default function Contact() {
   return (
@@ -60,7 +61,7 @@ export default function Contact() {
               <ul className="contact-adress">
                 <li>- +55 7 8954-5423</li>
                 <li>- pedidos@telepizza.com</li>
-                <li>- Rua Gracho Cardoso - Brasília</li>
+                <li>- Rua Gracho Cardoso - Brasilia</li>
                 <li>- Avenida Brasil - Rio de janeiro</li>
               </ul>
 
@@ -73,6 +74,8 @@ export default function Contact() {
           </div>
         </section>
       </main>
+
+      <Rodape />
     </>
   );
 }
