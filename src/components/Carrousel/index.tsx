@@ -14,10 +14,13 @@ type CarrouselProps = {
   datas: [{
     clienteInformation : {
       id: number;
-      text: string;
-      imageurl: string;
+      opinion: string;
+      avatarurl: {
+        url: string;
+      };
       author: string;
-      cityState: string;
+      city: string;
+      state: string;
     }
   }]
 }

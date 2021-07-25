@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head'
-import { FaChevronRight, FaAngleRight, FaTag } from 'react-icons/fa';
+import { FaChevronRight, FaAngleRight, FaTag, FaBolt } from 'react-icons/fa';
 
 import Carrousel from '../components/Carrousel';
 import Menu from '../components/Menu';
@@ -16,6 +16,7 @@ import { useState, useEffect } from 'react';
 export default function Home() {
 
   const [menu, setMenu] = useState([]);
+  const [testimony, setTestimony] = useState([]);
 
   useEffect(() => {
 
@@ -38,16 +39,31 @@ export default function Home() {
             pricenew
             priceold
           }
+          allTestimonies {
+            id
+            opinion
+            avatarurl {
+              url
+            }
+            city
+            state
+            author
+          }
         }`})
     }).then(async (res) => {
       const dados = await res.json();
+
+      const allTestimony = dados.data.allTestimonies
       const allMenus = dados.data.allMenus;
+
       setMenu(allMenus);
+      setTestimony(allTestimony);
     });
 
   }, [])
-
+  console.log(testimony)
   return (
+
     <>
       <Head>
         <title>Pizzaria Inácio - Faça já o seu pedido</title>
@@ -77,18 +93,36 @@ export default function Home() {
 
         <section className={styles.promotion} >
           <div className="container">
-            <span className={styles.promotionIcon}>
-              <FaTag />
-            </span>
-            <p>
-              <span>Obá, desconto!</span>
-              <Link to="/">
-                Entre em contato agora
-                <FaAngleRight />
-              </Link>
-            </p>
+            <ul className={styles.promotionsList}>
+              <li>
+                <span className={styles.promotionIcon}>
+                  <FaTag />
+                </span>
+                <p>
+                  <span>Obá, desconto!</span>
+                  <Link to="/">
+                    Entre em contato agora
+                    <FaAngleRight />
+                  </Link>
+                </p>
+              </li>
+              <li>
+                <span className={styles.promotionIcon}>
+                  <FaBolt />
+                </span>
+                <p>
+                  <span>Entrega rápida!</span>
+                  <Link to="/">
+                    Saiba mais
+                    <FaAngleRight />
+                  </Link>
+                </p>
+              </li>
+            </ul>
+
           </div>
         </section>
+
         <section className={'section ' + styles.portfolio}>
           <div className="container">
             <h2 className="title">Telecombo semanal!!!</h2>
