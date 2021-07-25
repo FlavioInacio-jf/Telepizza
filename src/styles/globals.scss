@@ -69,6 +69,7 @@ html {
   --textTertiaryColor: #5A5A5A;
   --textQuarternaryColor: #C5C6CA;
 
+  --borderColor: #dcdcdc;
   --transition-hover: 0.7s;
   --commonRadius: 0.5rem;
 }
@@ -90,7 +91,7 @@ body {
   gap: 1.75rem;
 }
 .section {
-  padding-top: 1.5rem;
+  padding-top: 3rem;
 }
 
 .btn {
@@ -140,10 +141,10 @@ body {
 
 .title {
   font: 700 1.5rem Inter, sans-serif;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
   line-height: 1.5;
-  color: var(--colorPrimary);
+  color: var(--textPrimaryColor);
 
   &::after {
     content: "";
@@ -151,11 +152,10 @@ body {
     width: 20%;
     height: 0.125rem;
 
-    margin: 0 auto;
     margin-top: .25rem;
 
     border-radius: var(--commonRadius);
-    background: var(--colorPrimary);
+    background: var(--textPrimaryColor);
   }
 }
 

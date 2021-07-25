@@ -1,7 +1,6 @@
 .box {
   background: var(--backgroundSecondary);
   border-radius: var(--commonRadius);
-  box-shadow: 1px 1px var(    --backgroundPrimary);
   width: 100%;
 
   .boxHeader {
@@ -22,7 +21,7 @@
   }
 
   .boxBody {
-    border: 1px solid var(--textQuarternaryColor);
+    border: 1px solid var(--borderColor);
     border-radius: 0 0 var(--commonRadius) var(--commonRadius);
     border-top: none;
     padding: 1rem;
@@ -52,6 +51,7 @@
 
       P {
         font: 400 1rem Lexend, sans-serif;
+        line-height: 1.5;
         color: var(--textPrimaryColor);
         padding-top: 1rem;
       }
@@ -65,12 +65,15 @@
           font-size: 1.25rem;
           font-weight: 700;
           color: var(--colorPrimary);
+          span {
+            font-size: 0.875rem;
+          }
         }
 
         .priceOld {
           font-size: 0.875rem;
           text-decoration: line-through;
-          color: var(--textTertiaryColor);
+          color: var(--textPrimaryColor);
         }
       }
     }

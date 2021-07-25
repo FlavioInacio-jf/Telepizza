@@ -1,36 +1,54 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, {  Pagination } from 'swiper/core';
+import 'swiper/swiper.min.css';
+import 'swiper/components/pagination/pagination.min.css';
+import 'swiper/components/scrollbar/scrollbar.min.css';
 
-import Swiper from 'react-id-swiper';
-import Card from '../Card';
 
-const Autoplay = () => {
+import Testimony from '../Testimony/index';
 
-  const data = {
-    imageUrl: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGl6emF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
-    title: 'Calabresa',
-    priceOld: '25,60',
-    priceNew: '25,80',
-    description: 'Mussarela, calabresa, queijo',
-  }
+SwiperCore.use([Pagination]);
+
+
+type CarrouselProps = {
+  datas: [{
+    clienteInformation : {
+      id: number;
+      text: string;
+      imageurl: string;
+      author: string;
+      cityState: string;
+    }
+  }]
+}
+export default function Carrousel({ datas }: CarrouselProps) {
 
   const params = {
     spaceBetween: 50,
+    slidesPerView: 1,
     centeredSlides: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
-    }
+    },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+      waitForTransition: true,
+    },
+    loop: false,
+    speed: 1000,
   }
 
   return (
     <Swiper {...params}>
-      <span><Card data={data} /></span>
-      <span><Card data={data} /></span>
+      {datas.map((item) => {
+        return (
+          <SwiperSlide key={item.clienteInformation.id}>
+            <span><Testimony clienteInformation={item.clienteInformation} /></span>
+          </SwiperSlide>
+        );
+      })}
     </Swiper>
   )
 }
-
-export default Autoplay;
