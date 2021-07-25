@@ -31,7 +31,7 @@ export default function Menu() {
                   <Link to="/" className="current-page"><FaHome className={styles.iconDistance} />Home</Link>
                   <Link to="#"><FaPizzaSlice className={styles.iconDistance} />Menu</Link>
                   <Link to="#"><FaTruckLoading className={styles.iconDistance} />Delivery</Link>
-                  <Link to="/contact"><FaInfo className={styles.iconDistance} />About</Link>
+                  <Link to="/Contact"><FaInfo className={styles.iconDistance} />About</Link>
                 </div>
               </div>
             </nav>
