@@ -24,6 +24,11 @@ img {
   display: block;
 }
 
+input, button, textarea {
+  border: none;
+  background: none;
+}
+
 section,
 div {
   position: relative;

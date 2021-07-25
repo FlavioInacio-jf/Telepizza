@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import { FaHome, FaPizzaSlice, FaInfo, FaTruckLoading, FaBars, FaTimes, FaWhatsapp } from 'react-icons/fa';
 
 import Link from '../Link';
-
 import Button from '../Button';
 import styles from './Menu.module.scss';
 
 export default function Menu() {
 
   const [isShowMenu, setShowMenu] = useState<Boolean>(false);
+  const router = useRouter();
 
   function handleShowMenu() {
     setShowMenu(!isShowMenu);
@@ -30,7 +31,7 @@ export default function Menu() {
                   <Link to="/" className="current-page"><FaHome className={styles.iconDistance} />Home</Link>
                   <Link to="#"><FaPizzaSlice className={styles.iconDistance} />Menu</Link>
                   <Link to="#"><FaTruckLoading className={styles.iconDistance} />Delivery</Link>
-                  <Link to="#"><FaInfo className={styles.iconDistance} />About</Link>
+                  <Link to="/contact"><FaInfo className={styles.iconDistance} />About</Link>
                 </div>
               </div>
             </nav>

@@ -19,6 +19,7 @@ import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 import 'swiper/components/scrollbar/scrollbar.min.css';
 
+
 SwiperCore.use([Navigation, Pagination, Autoplay, A11y]);
 
 export default function Home() {
@@ -94,6 +95,7 @@ export default function Home() {
       </Head>
 
       <HeaderNotification />
+
       <Menu />
 
       <main id={styles.main} className="gap">
@@ -102,7 +104,7 @@ export default function Home() {
           <div className="container">
             <div className={styles.bannerIntroduction}>
               <div className={styles.bannerIntroductionImage}>
-                <img  src="/pizza-sharing.svg" alt="Mulheres comendo pizza"/>
+                <Image  src={"/pizza-sharing.svg"} objectFit="contain" layout="fill" alt="Mulheres comendo pizza"/>
               </div>
               <div className={styles.bannerIntroductionContent}>
                 <h3 className={styles.titleBanner}>Super oferta!!!</h3>
@@ -182,7 +184,6 @@ export default function Home() {
             <div className={styles.testimonia}>
               <Swiper {...params}>
                 {testimony.map((clienteInformation) => {
-                  console.log(clienteInformation)
                   return (
                     <SwiperSlide key={clienteInformation.id}>
                       <span><Testimony clienteInformation={clienteInformation} /></span>

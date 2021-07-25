@@ -39,9 +39,10 @@
           display: flex;
           align-items: center;
           color: var(--colorTertiary);
-          transition: filter var(--transition-hover);
+          transition: filter, transform var(--transition-hover);
 
           &:hover {
+            transform: translateX(20px);
             filter: brightness(0.80);
           }
         }
@@ -62,6 +63,17 @@
       text-align: center;
       color: var(--textPrimaryColor);
 
+      .bannerIntroductionImage {
+        width: 100%;
+
+        > div {
+          position: unset !important;
+        }
+        img {
+          position: relative !important;
+          height: 18rem !important;
+        }
+      }
       .bannerIntroductionContent {
         display: flex;
         justify-content: space-between;

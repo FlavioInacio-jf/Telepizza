@@ -5,10 +5,10 @@ import styles from './Rodape.module.scss';
 
 export default function Rodape() {
   return (
-    <footer id={styles.rodape} className="section">
+    <footer id={styles.rodape}>
       <div className="container">
-        <nav className="nav-rodape">
-          <ul className="navbar-nav-rodape">
+        <nav>
+          <ul>
             <li>
               <a href="">Home</a>
             </li>
@@ -24,7 +24,7 @@ export default function Rodape() {
           </ul>
         </nav>
 
-        <div className="redes-rodape ">
+        <div className={styles.redesRodape}>
           <Link to="#">
             <FaFacebookF />
           </Link>
@@ -39,10 +39,12 @@ export default function Rodape() {
         </div>
       </div>
 
-      <div className="copy">
-        <p>
-          Copyright &copy 2021 - Todos os Direitos Reservados - TelePizza.com
-        </p>
+      <div className={styles.copy}>
+        <div className="container">
+          <p>
+            Copyright &copy; 2021 - Todos os Direitos Reservados - TelePizza.com
+          </p>
+        </div>
       </div>
     </footer>
   );

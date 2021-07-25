@@ -1,4 +1,60 @@
 #rodape {
   color: var(--backgroundSecondary);
   background : var(--colorPrimary);
+
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    padding: 1.5rem 0;
+
+  }
+
+  nav {
+    ul {
+      display: flex;
+      justify-content: center;
+
+      gap: 1rem;
+
+      a {
+        transition: filter var(--transition-hover);
+
+        &:hover {
+          filter: brightness(0.85);
+        }
+      }
+    }
+  }
+
+  .redesRodape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+
+    gap: 1rem;
+
+    a {
+      transition: filter, transform var(--transition-hover);
+
+      &:hover {
+        transform: translateY(-10px);
+        filter: brightness(0.85);
+      }
+    }
+  }
+
+  .copy {
+    padding: 0.5rem 0;
+
+    text-align: center;
+    font-size: 0.875rem;
+
+    background: var(--backgroundSecondary);
+    color: var(--textPrimaryColor);
+  }
 }
