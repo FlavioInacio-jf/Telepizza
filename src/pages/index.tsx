@@ -109,7 +109,7 @@ export default function Home() {
               <div className={styles.bannerIntroductionContent}>
                 <h3 className={styles.titleBanner}>Super oferta!!!</h3>
                 <p className={styles.bannerIntroductionText}>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,
                 </p>
 
                 <div className={styles.bannerIntroductionFooter}>
