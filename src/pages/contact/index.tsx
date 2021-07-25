@@ -48,7 +48,7 @@ export default function Contact() {
 
                 <div className="wrap-order">
                   <label>Comments/Questions</label>
-                  <textarea id="order" required>Mais de um sabor? Informe o saboes separados por virgula</textarea>
+                  
                 </div>
                 <div className="wrap-submit">
                   <button type="submit" className="btn">Enviar</button>
