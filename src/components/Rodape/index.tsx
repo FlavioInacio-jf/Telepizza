@@ -25,15 +25,15 @@ export default function Rodape() {
         </nav>
 
         <div className={styles.redesRodape}>
-          <Link to="#">
+          <Link to="https://www.facebook.com/">
             <FaFacebookF />
           </Link>
 
-          <Link to="#">
+          <Link to="https://www.instagram.com/">
             <FaInstagram />
           </Link>
 
-          <Link to="#">
+          <Link to="https://twitter.com/">
             <FaTwitter />
           </Link>
         </div>
@@ -42,7 +42,7 @@ export default function Rodape() {
       <div className={styles.copy}>
         <div className="container">
           <p>
-            Copyright &copy; 2021 - Todos os Direitos Reservados - TelePizza.com
+            Copyright 2021 - Todos os Direitos Reservados - TelePizza.com
           </p>
         </div>
       </div>
