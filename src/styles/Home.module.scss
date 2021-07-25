@@ -50,48 +50,56 @@
   }
 
   .introduction {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
-                url(../../public/food-pizza.jpeg) no-repeat center center;
-    background-size: cover;
-    padding: 7.5rem 0;
-
+    padding: 3rem 0;
+    background: var(--backgroundSecondary);
 
     .bannerIntroduction {
-      font: 400 1rem Inter, sans-serif;
-      color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      gap: 1rem;
       text-align: center;
+      color: var(--textPrimaryColor);
 
-      .titleBanner {
-        font: 700 2rem Inter, sans-serif;
-        text-transform: uppercase;
-        display: inline-block;
-
-        &::after {
-          content: "";
-          display: block;
-          width: 30%;
-          height: 0.125rem;
-
-          margin: 0 auto;
-          margin-top: .25rem;
-
-          border-radius: var(--commonRadius);
-          background: var(--backgroundSecondary);
-        }
-      }
-
-      p {
-        color: var(--textQuarternaryColor);
-        padding-top: 1.5rem;
-        font-size: 1.125rem;
-        line-height: 1.5;
-      }
-      .bannerIntroductionFooter {
-        padding-top: 1.5rem;
-
+      .bannerIntroductionContent {
         display: flex;
-        justify-content: center;
-        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+
+        .titleBanner {
+          font: 700 1.5rem Lexend, sans-serif;
+          text-transform: uppercase;
+          display: inline-block;
+
+          &::after {
+            content: "";
+            display: block;
+            width: 30%;
+            height: 0.125rem;
+
+            margin: 0 auto;
+            margin-top: .25rem;
+
+            border-radius: var(--commonRadius);
+            background: var(--textPrimaryColor);
+          }
+        }
+
+        p {
+          text-align: left;
+          padding-top: 1.5rem;
+          font: 400 1rem Lexend, sans-serif;
+          line-height: 1.5;
+        }
+        .bannerIntroductionFooter {
+          padding-top: 1.5rem;
+
+          display: flex;
+          justify-content: space-between;
+          gap: 1rem;
+        }
       }
     }
   }

@@ -1,5 +1,6 @@
 import React from 'react';
-import Head from 'next/head'
+import Head from 'next/head';
+import Image from 'next/image';
 import { FaChevronRight, FaAngleRight, FaTag, FaBolt } from 'react-icons/fa';
 
 import Rodape from '../components/Rodape';
@@ -100,14 +101,19 @@ export default function Home() {
         <section className={styles.introduction}>
           <div className="container">
             <div className={styles.bannerIntroduction}>
-              <h3 className={styles.titleBanner}>Super oferta!!!</h3>
-              <p className={styles.bannerIntroductionText}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
+              <div className={styles.bannerIntroductionImage}>
+                <img  src="/pizza-sharing.svg" alt="Mulheres comendo pizza"/>
+              </div>
+              <div className={styles.bannerIntroductionContent}>
+                <h3 className={styles.titleBanner}>Super oferta!!!</h3>
+                <p className={styles.bannerIntroductionText}>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                </p>
 
-              <div className={styles.bannerIntroductionFooter}>
-                <Link to="/" className="btn">About more</Link>
-                <Link to="/" className="btn btn-outline">Add cart</Link>
+                <div className={styles.bannerIntroductionFooter}>
+                  <Link to="/" className="btn">About more</Link>
+                  <Link to="/" className="btn btn-outline">Add cart</Link>
+                </div>
               </div>
             </div>
           </div>
