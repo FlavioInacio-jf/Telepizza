@@ -1,6 +1,12 @@
 .contact {
   background: var(--backgroundSecondary);
+  .description {
+    font: 400 0.875rem Inter, sans-serif;
+    line-height: 1.5;
+    color: var(--textTertiaryColor);
 
+    padding-top: 0.5rem;
+  }
   .contactContent {
     display: flex;
     justify-content: flex-start;
@@ -21,43 +27,147 @@
       gap: 1.5rem;
 
       div {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-
         width: 100%;
 
         background: #f2f2f2;
-        border: 1px solid #f2f2f2;
         border-radius: var(--commonRadius) var(--commonRadius) 0 0;
 
         input {
           width: 100%;
           padding: 1rem 0.625rem;
+
           outline: none;
           transition: all 0.3s ease-in-out;
+          background: transparent;
+          transition: border-color 0.3s;
+          border-bottom: 2px solid transparent;
+
+          &::placeholder {
+            font-size: 1rem;
+            transition: 0.3s;
+          }
+          &:focus {
+            border-bottom: 2px solid var(--colorPrimary);
+
+            &::placeholder {
+              font-size: 0.875rem;
+
+              position: absolute;
+              top: 0px;
+              left: 0.625rem;
+            }
+          }
+        }
+      }
+
+      .wrapHowManyAndTelphone {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background: var(--backgroundSecondary);
+        gap: 1rem;
+
+        .wrapHowMany {
+          flex: 1;
+        }
+        .wrapTelephone {
+          flex: 3;
+        }
+      }
+
+      .wrapOrder {
+        textarea {
+          font: 400 1rem Inter, sans-serif;
+          padding: 1rem 0.625rem;
+          min-width: 100%;
+          min-height: 100px;
+          height: 100%;
+
+          transition: border-color 0.3s;
+          border-bottom: 2px solid transparent;
+
+          outline: none;
 
           &:focus {
-            top: -30px;
-            border-bottom: 2px solid var(--colorSecondary);
+            border-bottom: 2px solid var(--colorPrimary);
           }
         }
 
-        label {
-          width: 100%;
-          height: 3rem;
-          
-          cursor: text;
-          font-size: 0.875rem;
-          color: var(--textTertiaryColor);
-          position: absolute;
-          left: 0.625rem;
-          top: 50%;
-          transform: translateY(-50%);
+      }
+      .wrapSubmit {
+        width: fit-content;
+      }
+    }
 
+    .contactData {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
 
+      gap: 1.5rem;
+
+      padding: 2rem 0;
+
+      .subtitle {
+        font: 700 1.25rem Inter, sans-serif;
+        text-transform: uppercase;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 20%;
+          height: 0.125rem;
+
+          margin-top: .25rem;
+
+          border-radius: var(--commonRadius);
+          background: var(--textPrimaryColor);
+        }
+
+      }
+
+      .address {
+        ul {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          flex-direction: column;
+
+          gap: 0.5rem;
+
+          li {
+            font: 400 1rem Lexend, sans-serif;
+            line-height: 1.5;
+          }
+        }
+      }
+
+      .socialNetwork {
+
+        .wrapSocialNetwork {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+
+          gap: 1rem;
+
+          font-size: 1.5rem;
         }
       }
     }
+
+  }
+
+  .map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    padding-bottom: 3rem;
   }
 }
