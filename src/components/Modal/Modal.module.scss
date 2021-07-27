@@ -33,6 +33,19 @@
     position: relative;
 
     header {
+
+      > div {
+        position: unset !important;
+        > div {
+          position:  relative !important;
+        }
+      }
+      img {
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+        max-height: 300px !important;
+      }
       button {
         font-size: 2rem;
         position: absolute;
@@ -78,7 +91,7 @@
           color: var(--textSecondaryColor);
           border: var(--colorSecondary);
           transition: filter 0.3s;
-          
+
           &:hover {
             filter: brightness(0.9);
           }

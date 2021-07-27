@@ -9,8 +9,7 @@ export default function CardapioProvider({ children }: CardapioProviderProps) {
 
 
   return (
-    <div>
-      oi
-    </div>
+
+      <div> oi</div>
   )
 }

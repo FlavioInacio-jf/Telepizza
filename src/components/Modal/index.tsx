@@ -13,7 +13,10 @@ export default function Modal ({ name }: ModalProps) {
       <div className={styles.modalContainer}>
         <div className={styles.modalContent}>
           <header>
-            <img src={"./order-confirmed.svg"} alt="Order confirmed image" />
+            <div>
+              <Image src={"/order-confirmed.svg"} layout="fill" objectFit="contain" alt="Order confirmed image" />
+            </div>
+
             <button type="button"><FaTimes /></button>
           </header>
           <h4> Parabéns, <span>{name || ''} </span>!! <br />Seu pedido foi realizado com sucesso!!!</h4>
