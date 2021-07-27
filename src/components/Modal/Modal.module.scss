@@ -1,0 +1,89 @@
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(51, 51, 51, 0.7);
+  z-index: 200;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 1.5rem;
+
+  .modalContent {
+    max-width: 400px;
+
+    padding: 3rem 1.5rem;
+
+    border-radius: 0.5rem;
+    background: var(--backgroundSecondary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 1.5rem;
+
+    position: relative;
+
+    header {
+      button {
+        font-size: 2rem;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        transition: color 0.3s;
+
+        &:hover {
+          color: var(--colorPrimary);
+        }
+      }
+    }
+
+    h4 {
+      font: 700 1.5rem Lexend, sans-serif;
+      color: var(--textPrimaryColor);
+      line-height: 1.5;
+
+      text-align: center;
+
+      span {
+        color: var(--colorPrimary);
+      }
+    }
+
+    p {
+      font: 400 1rem Lexend, sans-serif;
+      color: var(--textTertiaryColor);
+      line-height: 1.5;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 1rem;
+
+      a {
+
+        &:last-child {
+          background: var(--colorSecondary);
+          color: var(--textSecondaryColor);
+          border: var(--colorSecondary);
+          transition: filter 0.3s;
+          
+          &:hover {
+            filter: brightness(0.9);
+          }
+        }
+      }
+    }
+  }
+}

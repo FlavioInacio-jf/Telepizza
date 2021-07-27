@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import Head from 'next/head';
 
 import ReactMapGL from 'react-map-gl';
@@ -11,8 +11,10 @@ import Rodape from '../../components/Rodape';
 import Link from '../../components/Link';
 
 import styles from './Contact.module.scss';
+import Modal from '../../components/Modal';
 
 export default function Contact() {
+
   const [viewport, setViewport] = useState({
     width: "100%",
     height: 400,
@@ -21,7 +23,16 @@ export default function Contact() {
     zoom: 15,
   });
 
+  const [userName, setUserName] = useState('');
+  const [ isModalShow, setModalShow ] = useState<boolean>(false);
+
+  function handleSendForm (event: FormEvent) {
+    event.preventDefault();
+    setModalShow(!isModalShow);
+  }
+
   return (
+
     <>
       <Head>
         <title>Pizzaria Inácio - Entre em contato e adiquira a sua pizza</title>
@@ -34,17 +45,17 @@ export default function Contact() {
             <h2 className="title">Make your Order</h2>
             <h3 className={styles.description}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus incidunt et harum alias corporis fugiat!</h3>
             <div className={styles.contactContent} >
-              <form onSubmit={(event)=> event.preventDefault()} className={styles.formContact}>
+              <form onSubmit={handleSendForm} className={styles.formContact}>
                 <div className="wrap-name">
-                  <input type="text" id="name" placeholder="Name" required />
+                  <input type="text" placeholder="Name" required name="nome" onChange={(event) => setUserName(event.target.value) } />
                 </div>
 
                 <div className="wrap-email">
-                  <input type="email" id="email" placeholder="E-mai" required />
+                  <input type="email" placeholder="E-mai" required />
                 </div>
 
                 <div className="wrap-adress">
-                  <input type="text" id="adress" placeholder="Address" required />
+                  <input type="text" placeholder="Address" required />
                 </div>
 
                 <div className={styles.wrapHowManyAndTelphone}>
@@ -103,6 +114,8 @@ export default function Contact() {
       </main>
 
       <Rodape />
+
+      {isModalShow && <Modal name={userName} />}
     </>
   );
 }
