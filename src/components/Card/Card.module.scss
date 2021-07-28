@@ -2,10 +2,17 @@
   background: var(--backgroundSecondary);
   border-radius: var(--commonRadius);
   width: 100%;
-  box-shadow: 1px 1px #f2f2f2;
+  cursor: pointer;
+  transition: all 0.3s;
 
+   &:hover {
+    box-shadow: 1px 1px 1px 0 #E8E8E8;
+
+    .buttonToCard {
+      display: flex;
+    }
+   }
   .boxHeader {
-
     width: 100%;
     > div {
       border-radius: var(--commonRadius) var(--commonRadius)  0 0;
@@ -58,10 +65,17 @@
       }
       .boxPrice {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        padding-top: 1rem;
         gap: 0.5rem;
-        padding-top: 0.5rem;
 
+        > div {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
         .priceNew {
           font-size: 1.25rem;
           font-weight: 700;
@@ -76,6 +90,7 @@
           text-decoration: line-through;
           color: var(--textPrimaryColor);
         }
+
       }
     }
   }

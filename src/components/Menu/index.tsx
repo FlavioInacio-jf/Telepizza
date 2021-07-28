@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 
 import { FaHome, FaPizzaSlice, FaInfo, FaTruckLoading, FaBars, FaTimes, FaWhatsapp } from 'react-icons/fa';
 
@@ -11,7 +10,6 @@ import styles from './Menu.module.scss';
 export default function Menu() {
 
   const [isShowMenu, setShowMenu] = useState<Boolean>(false);
-  const router = useRouter();
 
   function handleShowMenu() {
     setShowMenu(!isShowMenu);
@@ -26,10 +24,16 @@ export default function Menu() {
         { isShowMenu &&
           (
             <nav className={styles.nav} onClick={handleShowMenu}>
-              <div className="styles.wrap">
+              <div className={styles.wrap}>
+                <div className={styles.logoContainer}>
+                  <button type="button" onClick={handleShowMenu}>
+                    <FaTimes />
+                  </button>
+                  <Image src={'/logo.png'}  alt="Logo Pizzaria" objectFit="fill"  layout="fill" className={styles.logo}/>
+                </div>
                 <div className={'grid ' + styles.navbar}>
                   <Link to="/" className="current-page"><FaHome className={styles.iconDistance} />Home</Link>
-                  <Link to="#"><FaPizzaSlice className={styles.iconDistance} />Menu</Link>
+                  <Link to="/Cardapio"><FaPizzaSlice className={styles.iconDistance} />Menu</Link>
                   <Link to="#"><FaTruckLoading className={styles.iconDistance} />Delivery</Link>
                   <Link to="/Contact"><FaInfo className={styles.iconDistance} />About</Link>
                 </div>

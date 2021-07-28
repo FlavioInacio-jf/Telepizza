@@ -43,16 +43,50 @@
     justify-content: flex-start;
     flex-direction: column;
     z-index: 100;
-    > div {
-      width: 50vw;
-      height: 100vh;
-      padding: 1.5rem;
-      background: var(--backgroundPrimary);
 
+    .wrap {
+      width: 17.5rem;
+      height: 100%;
+      background: var(--backgroundPrimary);
       z-index: 999;
       animation: fade-in-left 0.2s linear;
+
+    }
+
+    .logoContainer {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.5rem;
+
+      background: var(--colorPrimary);
+
+      button {
+        font-size: 1.5rem;
+        color: var(--textSecondaryColor);
+        top: .5rem;
+        right: .5rem;
+        position: absolute;
+        outline: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: var(--textPrimaryColor);
+        }
+      }
+
+      img {
+        max-width: 8rem !important;
+        height: 4rem !important;
+        width: min-content !important;
+      }
     }
     .navbar {
+      padding: 1.5rem;
+      padding-top: 0;
+
       font: 700 1rem Lexend, sans-serif;
       color: var(--textPrimaryColor);
       text-align: left;

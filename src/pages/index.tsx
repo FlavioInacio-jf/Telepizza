@@ -11,7 +11,6 @@ import HeaderNotification from '../components/HeaderNotification';
 
 import styles from '../styles/Home.module.scss';
 import Testimony from '../components/Testimony';
-import { useState, useEffect } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Autoplay, Navigation, A11y } from 'swiper/core';
@@ -19,13 +18,13 @@ import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 import 'swiper/components/scrollbar/scrollbar.min.css';
 
+import {  useCardapio } from '../contexts/MenuTestimonialsContext';
 
 SwiperCore.use([Navigation, Pagination, Autoplay, A11y]);
 
 export default function Home() {
 
-  const [menu, setMenu] = useState([]);
-  const [testimony, setTestimony] = useState([]);
+  const { menu, testimony } = useCardapio();
 
   const params = {
     spaceBetween: 50,
@@ -42,50 +41,6 @@ export default function Home() {
     loop: true,
     speed: 2000,
   }
-
-  useEffect(() => {
-
-    fetch("https://graphql.datocms.com/", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Authorization': '0ee5f218c9a8a1ee1ec74f445ca6b3',
-      },
-      body: JSON.stringify({
-        'query': `query {
-          allMenus {
-            id
-            title
-            description
-            imagemurl {
-              url
-            }
-            pricenew
-            priceold
-          }
-          allTestimonies {
-            id
-            opinion
-            avatarurl {
-              url
-            }
-            city
-            state
-            author
-          }
-        }`})
-    }).then(async (res) => {
-      const dados = await res.json();
-
-      const allTestimony = dados.data.allTestimonies
-      const allMenus = dados.data.allMenus;
-
-      setMenu(allMenus);
-      setTestimony(allTestimony);
-    });
-
-  }, [])
 
   return (
     <>

@@ -3,11 +3,15 @@ import styles from './Modal.module.scss';
 import Button from '../Button';
 
 import Image from 'next/image';
+import { useModalContext } from '../../contexts/ModalContext';
 
 type ModalProps = {
   name? : string;
 }
 export default function Modal ({ name }: ModalProps) {
+
+  const { handleModalShow } = useModalContext();
+
   return(
     <>
       <div className={styles.modalContainer}>
@@ -17,12 +21,12 @@ export default function Modal ({ name }: ModalProps) {
               <Image src={"/order-confirmed.svg"} layout="fill" objectFit="contain" alt="Order confirmed image" />
             </div>
 
-            <button type="button"><FaTimes /></button>
+            <button type="button" onClick={handleModalShow}><FaTimes /></button>
           </header>
           <h4> Parabéns, <span>{name || ''} </span>!! <br />Seu pedido foi realizado com sucesso!!!</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate soluta placeat aliquam</p>
           <footer>
-            <button className="btn" type="button">
+            <button className="btn" type="button" onClick={handleModalShow}>
               <FaTimes />
               Close
             </button>

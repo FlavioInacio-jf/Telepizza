@@ -12,6 +12,7 @@ import Link from '../../components/Link';
 
 import styles from './Contact.module.scss';
 import Modal from '../../components/Modal';
+import { useModalContext } from '../../contexts/ModalContext';
 
 export default function Contact() {
 
@@ -24,11 +25,11 @@ export default function Contact() {
   });
 
   const [userName, setUserName] = useState('');
-  const [ isModalShow, setModalShow ] = useState<boolean>(false);
+  const {isShowModal, handleModalShow} = useModalContext();
 
   function handleSendForm (event: FormEvent) {
     event.preventDefault();
-    setModalShow(!isModalShow);
+    handleModalShow();
   }
 
   return (
@@ -115,7 +116,7 @@ export default function Contact() {
 
       <Rodape />
 
-      {isModalShow && <Modal name={userName} />}
+      {isShowModal && <Modal name={userName} />}
     </>
   );
 }
