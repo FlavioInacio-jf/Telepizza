@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, InputHTMLAttributes } from 'react';
 import Head from 'next/head';
 
 import ReactMapGL from 'react-map-gl';
@@ -14,6 +14,14 @@ import styles from './Contact.module.scss';
 import Modal from '../../components/Modal';
 import { useModalContext } from '../../contexts/ModalContext';
 
+type formType = {
+  nome: string;
+  email: string;
+  address: string;
+  howMany: string;
+  telephone: string;
+  order: string;
+}
 export default function Contact() {
 
   const [viewport, setViewport] = useState({
@@ -23,13 +31,39 @@ export default function Contact() {
     longitude: -37.0516275,
     zoom: 15,
   });
+  const { isShowModal, handleModalShow } = useModalContext();
 
-  const [userName, setUserName] = useState('');
-  const {isShowModal, handleModalShow} = useModalContext();
+  const [form, setForm] = useState<formType>({
+    nome: '',
+    email: '',
+    address: '',
+    howMany: '',
+    telephone: '',
+    order: '',
+  });
 
-  function handleSendForm (event: FormEvent) {
+
+  function handleChange(event) {
+    const {name, value } = event.target;
+    setForm({
+      ...form, [name]: value
+    });
+
+    console.log(form)
+  }
+
+  function handleSendForm(event) {
     event.preventDefault();
     handleModalShow();
+    
+    setForm({
+      nome: '',
+      email: '',
+      address: '',
+      howMany: '',
+      telephone: '',
+      order: '',
+    })
   }
 
   return (
@@ -48,30 +82,74 @@ export default function Contact() {
             <div className={styles.contactContent} >
               <form onSubmit={handleSendForm} className={styles.formContact}>
                 <div className="wrap-name">
-                  <input type="text" placeholder="Name" required name="nome" onChange={(event) => setUserName(event.target.value) } />
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    required
+                    name="nome"
+                    value={form.nome}
+                    onChange={(event) => handleChange(event)}
+                  />
                 </div>
 
                 <div className="wrap-email">
-                  <input type="email" placeholder="E-mai" required />
+                  <input
+                    type="email"
+                    placeholder="E-mai"
+                    required
+                    name="email"
+                    value={form.email}
+                    onChange={(event) => handleChange(event)}
+                  />
                 </div>
 
                 <div className="wrap-adress">
-                  <input type="text" placeholder="Address" required />
+                  <input
+                    type="text"
+                    placeholder="Address"
+                    required
+                    name="address"
+                    value={form.address}
+                    onChange={(event) => handleChange(event)}
+                  />
                 </div>
 
                 <div className={styles.wrapHowManyAndTelphone}>
                   <div className={styles.wrapHowMany}>
-                    <input type="number" min="1" max="10" placeholder="How many?" />
+                    <input
+                      type="number"
+                      min="1"
+                      max="10"
+                      placeholder="How many?"
+                      name="howMany"
+                      value={form.howMany}
+                      onChange={(event) => handleChange(event)}
+                    />
                   </div>
 
                   <div className={styles.wrapTelephone}>
-                    <input type="tel" id="telephone" placeholder="Telephone number" required />
+                    <input
+                      type="text"
+                      id="telephone"
+                      placeholder="Telephone number"
+                      required
+                      name="telephone"
+                      value={form.telephone}
+                      onChange={(event) => handleChange(event)}
+                    />
                   </div>
                 </div>
 
                 <div className={styles.wrapOrder}>
-                  <textarea id="order" placeholder="Mais de um sabor? Informe o sabores separados por virgula" required></textarea>
+                  <textarea
+                    placeholder="Mais de um sabor? Informe o sabores separados por virgula"
+                    required
+                    name="order"
+                    value={form.order}
+                    onChange={(event) => handleChange(event)}
+                  ></textarea>
                 </div>
+
                 <div className={styles.wrapSubmit}>
                   <button type="submit" className="btn">Enviar</button>
                 </div>
@@ -116,7 +194,7 @@ export default function Contact() {
 
       <Rodape />
 
-      {isShowModal && <Modal name={userName} />}
+      {isShowModal && <Modal name={form.nome} />}
     </>
   );
 }
