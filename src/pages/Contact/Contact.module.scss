@@ -4,9 +4,28 @@
     font: 400 0.875rem Inter, sans-serif;
     line-height: 1.5;
     color: var(--textTertiaryColor);
-
     padding-top: 0.5rem;
   }
+  .subtitle {
+    font: 700 1.25rem Inter, sans-serif;
+    text-transform: uppercase;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 20%;
+      height: 0.125rem;
+
+      margin-top: .25rem;
+
+      border-radius: var(--commonRadius);
+      background: var(--textPrimaryColor);
+    }
+
+  }
+
   .contactContent {
     display: flex;
     justify-content: flex-start;
@@ -80,9 +99,11 @@
         textarea {
           font: 400 1rem Inter, sans-serif;
           padding: 1rem 0.625rem;
+
           min-width: 100%;
           min-height: 100px;
           height: 100%;
+          max-height: 200px;
 
           transition: border-color 0.3s;
           border-bottom: 2px solid transparent;
@@ -110,25 +131,6 @@
 
       padding: 2rem 0;
 
-      .subtitle {
-        font: 700 1.25rem Inter, sans-serif;
-        text-transform: uppercase;
-        line-height: 1.5;
-        margin-bottom: 1rem;
-
-        &::after {
-          content: "";
-          display: block;
-          width: 20%;
-          height: 0.125rem;
-
-          margin-top: .25rem;
-
-          border-radius: var(--commonRadius);
-          background: var(--textPrimaryColor);
-        }
-
-      }
 
       .address {
         ul {
@@ -164,10 +166,19 @@
 
   .map {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    width: 100%;
+    min-width: 100%;
     padding-bottom: 3rem;
+
+    .subtitle {
+      align-self: flex-start;
+    }
+
+    > div {
+      width: 100% !important;
+    }
   }
 }

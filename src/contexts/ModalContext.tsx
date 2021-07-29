@@ -6,7 +6,7 @@ type ModalProviderProps = {
 
 type ModalContextType = {
   isShowModal: boolean;
-  handleModalShow: () => void;
+  handleModalShow: (state: boolean) => void;
 }
 
 const ModalContext = createContext({} as ModalContextType);
@@ -15,8 +15,8 @@ export default function ModalProvider({children}: ModalProviderProps) {
 
   const [ isShowModal, setShowModalState ] = useState(false);
 
-  function handleModalShow() {
-    setShowModalState(!isShowModal);
+  function handleModalShow(state: boolean) {
+    setShowModalState(state);
   }
   return(
     <ModalContext.Provider value={{

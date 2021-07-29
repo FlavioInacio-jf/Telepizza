@@ -12,9 +12,18 @@ export default function Cardapio() {
 
   return (
     <>
-      <Menu />
-      <main>
-        <section className={"section " + styles.cardapio}>
+      <main className={styles.cardapio}>
+        <header className={styles.cardapioHeader}>
+          <div className={styles.headerWrapper}>
+            <h2 className="title">Nosso cardapio completo</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere cupiditate quo recusandae aliquam.</p>
+          </div>
+          <footer>
+            <p>Showing <span>{menu.length}</span> results</p>
+          </footer>
+        </header>
+
+        <section className={"section " + styles.listCardapio}>
           <div className="container">
             <div className={styles.cards}>
               {menu.map((item, index) => {
@@ -28,8 +37,6 @@ export default function Cardapio() {
           </div>
         </section>
       </main>
-
-      <Rodape />
     </>
   );
 }

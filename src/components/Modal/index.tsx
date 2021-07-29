@@ -21,17 +21,17 @@ export default function Modal ({ name }: ModalProps) {
               <Image src={"/order-confirmed.svg"} layout="fill" objectFit="contain" alt="Order confirmed image" />
             </div>
 
-            <button type="button" onClick={handleModalShow}><FaTimes /></button>
+            <button type="button" onClick={()=> handleModalShow(false)}><FaTimes /></button>
           </header>
           <h4> Parabéns, <span>{name || ''} </span>!! <br />Seu pedido foi realizado com sucesso!!!</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate soluta placeat aliquam</p>
           <footer>
-            <button className="btn" type="button" onClick={handleModalShow}>
+            <button className="btn" type="button" onClick={()=> handleModalShow(false)}>
               <FaTimes />
               Close
             </button>
 
-            <Button to='/Cardapio'>
+            <Button to='/Cardapio' onClick={() => handleModalShow(false)}>
               <FaPizzaSlice />
               See all menu
             </Button>

@@ -1,5 +1,9 @@
 import Head from 'next/head';
 import Card from '../components/Card';
+import HeaderNotification from '../components/HeaderNotification';
+import Menu from '../components/Menu';
+import Rodape from '../components/Rodape';
+import NotificationProvider from '../contexts/HeaderNotificationContext';
 
 import CardapioProvider from '../contexts/MenuTestimonialsContext';
 import ModalProvider from '../contexts/ModalContext';
@@ -15,7 +19,11 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <CardapioProvider >
         <ModalProvider>
-          <Component {...pageProps} />
+          <NotificationProvider>
+            <Menu />
+          </NotificationProvider>
+            <Component {...pageProps} />
+          <Rodape />
         </ModalProvider>
 
       </CardapioProvider>
