@@ -9,7 +9,7 @@ type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 
 export default function Link({children, to, ...props}: LinkProps) {
   return (
-    <NextLink href={to} passHref>
+    <NextLink href={to}  passHref >
       <a {...props}>
         {children}
       </a>

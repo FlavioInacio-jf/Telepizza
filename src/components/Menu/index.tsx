@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-import { FaHome, FaPizzaSlice, FaInfo, FaTruckLoading, FaBars, FaTimes, FaWhatsapp } from 'react-icons/fa';
+import { FaHome, FaPizzaSlice, FaInfo, FaUsers, FaBars, FaTimes, FaWhatsapp } from 'react-icons/fa';
 
 import { useNotification } from '../../contexts/HeaderNotificationContext';
 
@@ -41,8 +41,8 @@ export default function Menu() {
                   <div className={'grid ' + styles.navbar}>
                     <Link to="/" className="current-page"><FaHome className={styles.iconDistance} />Home</Link>
                     <Link to="/Cardapio"><FaPizzaSlice className={styles.iconDistance} />Menu</Link>
-                    <Link to="#"><FaTruckLoading className={styles.iconDistance} />Delivery</Link>
-                    <Link to="/Contact"><FaInfo className={styles.iconDistance} />About</Link>
+                    <Link to="/Contact"><FaUsers className={styles.iconDistance} />Contact</Link>
+                    <Link to="/"><FaInfo className={styles.iconDistance} />About</Link>
                   </div>
                 </div>
               </nav>

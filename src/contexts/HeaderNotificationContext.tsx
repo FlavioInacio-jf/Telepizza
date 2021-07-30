@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 import nookies from 'nookies';
 
 type NotificationProviderProps = {
@@ -22,6 +22,7 @@ export default function NotificationProvider( {children}: NotificationProviderPr
       path: '/',
     })
   }
+
 
   return (
     <NotificationContext.Provider value={{

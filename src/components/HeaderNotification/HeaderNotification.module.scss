@@ -1,6 +1,5 @@
 .headerNotification {
   background: var(--colorSecondary);
-
   &::before {
     content: "";
     width: 100%;
@@ -18,7 +17,7 @@
     line-height: 1.5;
 
     padding: 1rem 0;
-    
+
     strong {
       font-weight: 700;
     }
