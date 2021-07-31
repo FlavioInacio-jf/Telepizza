@@ -1,0 +1,61 @@
+.cardapioHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  padding: 8rem 0;
+  position: relative;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+
+    h2 {
+      text-align: center;
+      color: var(--textSecondaryColor);
+    }
+    h2::after {
+      margin: 0 auto;
+      background: var(--textSecondaryColor);
+    }
+
+    p {
+      max-width: 350px;
+      font: 400 0.875rem Inter,sans-serif;
+      line-height: 1.5;
+      text-align: center;
+
+      color: var(--textSecondaryColor);
+    }
+  }
+
+  footer {
+    position: absolute;
+
+    display: block;
+    width: 100%;
+    bottom: 0;
+    padding: 1rem 0;
+
+    background: var(--colorSecondary);
+    text-align: center;
+
+    p {
+      font: 700 1rem Lexend,sans-serif;
+      color: var(--textSecondaryColor);
+
+      span {
+        color: var(--textPrimaryColor);
+      }
+    }
+
+  }
+
+}

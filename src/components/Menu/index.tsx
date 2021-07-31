@@ -32,17 +32,11 @@ export default function Menu() {
             (
               <nav className={styles.nav} onClick={handleShowMenu}>
                 <div className={styles.wrap}>
-                  <div className={styles.logoContainer}>
-                    <button type="button" onClick={handleShowMenu}>
-                      <FaTimes />
-                    </button>
-                    <Image src={'/logo.png'} alt="Logo Pizzaria" objectFit="fill" layout="fill" className={styles.logo} />
-                  </div>
                   <div className={'grid ' + styles.navbar}>
                     <Link to="/" className="current-page"><FaHome className={styles.iconDistance} />Home</Link>
                     <Link to="/Cardapio"><FaPizzaSlice className={styles.iconDistance} />Menu</Link>
                     <Link to="/Contact"><FaUsers className={styles.iconDistance} />Contact</Link>
-                    <Link to="/"><FaInfo className={styles.iconDistance} />About</Link>
+                    <Link to='/About'><FaInfo className={styles.iconDistance} />About</Link>
                   </div>
                 </div>
               </nav>

@@ -3,7 +3,7 @@
   flex-direction: column;
 
   .promotion {
-    background: var(--colorPrimary);
+    background: linear-gradient(to right, #D92027,#E30058);
 
     .promotionsList {
       display: flex;
@@ -77,7 +77,7 @@
       .bannerIntroductionContent {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         flex-direction: column;
 
         .titleBanner {
@@ -85,13 +85,13 @@
           text-transform: uppercase;
           display: inline-block;
 
+
           &::after {
             content: "";
             display: block;
             width: 30%;
             height: 0.125rem;
 
-            margin: 0 auto;
             margin-top: .25rem;
 
             border-radius: var(--commonRadius);
@@ -107,7 +107,6 @@
         }
         .bannerIntroductionFooter {
           padding-top: 1.5rem;
-
           display: flex;
           justify-content: space-between;
           gap: 1rem;
