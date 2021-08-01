@@ -28,7 +28,7 @@
       width: 100% !important;
       display: block;
       position: relative !important;
-      height: auto !important;
+      height: 15.625rem !important;
       max-height: 300px !important;
     }
 
@@ -105,5 +105,12 @@
         visibility: hidden;
       }
     }
+  }
+}
+
+
+@media (min-width: 992px) {
+  .box {
+    flex: 1;
   }
 }

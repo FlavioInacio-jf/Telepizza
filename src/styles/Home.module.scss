@@ -201,5 +201,17 @@
         gap: 0rem;
       }
     }
+
+    .portfolio {
+      width: 100%;
+
+      .cards {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 1.25rem;
+      }
+    }
   }
 }
