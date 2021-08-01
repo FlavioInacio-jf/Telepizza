@@ -610,8 +610,7 @@ body {
   .container {
     max-width: 720px;
     margin: 0 auto;
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
+
   }
 }
 
@@ -619,8 +618,7 @@ body {
   .container {
     max-width: 960px;
     margin: 0 auto;
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
+
   }
 }
 
@@ -628,18 +626,15 @@ body {
   .container {
     max-width: 1140px;
     margin: 0 auto;
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
+
   }
 }
 
 
 @media (min-width: 1400px) {
   .container {
-    max-width: 1320px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
   }
 }
 
