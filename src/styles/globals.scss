@@ -643,15 +643,15 @@ body {
   }
 }
 
-
-@media (max-width: 999.98px) {
-  html {
-    font-size: 93.75%;
-  }
-}
 @media (max-width: 759.98px) {
   html {
     font-size: 87.5%;
   }
 
+}
+
+@media (max-width: 999.98px) {
+  html {
+    font-size: 93.75%;
+  }
 }
