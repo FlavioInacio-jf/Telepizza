@@ -183,3 +183,23 @@
   }
 }
 
+@media (min-width: 992px) {
+  #main {
+    .introduction {
+
+      .bannerIntroduction {
+        gap: 2rem;
+        align-items: center;
+        flex-direction: row;
+        text-align: left;
+      }
+    }
+
+    .promotion {
+      .promotionsList {
+        justify-content: space-between;
+        gap: 0rem;
+      }
+    }
+  }
+}

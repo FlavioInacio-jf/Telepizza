@@ -133,3 +133,25 @@
     opacity: 1;
   }
 }
+
+@media (min-width: 992px) {
+  .menuBarButton {
+    display: none;
+  }
+
+  .logoContainer {
+    width: 100%;
+    max-width: 10% !important;
+  }
+
+  .nav {
+    position: static;
+
+    width: fit-content;
+    height: fit-content;
+
+    display: block;
+
+  }
+
+}
