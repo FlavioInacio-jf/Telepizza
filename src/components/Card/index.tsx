@@ -40,7 +40,7 @@ export default function Card({data}: CardProps) {
               <div className={styles.buttonToCard}>
                 <Link to="/" className="btn">
                   <FaWhatsapp />
-                  Fazer pedido
+                  Marker order
                 </Link>
               </div>
             </div>

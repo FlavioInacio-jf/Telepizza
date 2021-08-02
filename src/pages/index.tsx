@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import { FaChevronRight, FaAngleRight, FaTag, FaBolt } from 'react-icons/fa';
+import { FaChevronRight, FaAngleRight, FaTag, FaBolt, FaRegGrinAlt } from 'react-icons/fa';
 
 import Link from '../components/Link';
 import Card from '../components/Card';
@@ -37,6 +37,16 @@ export default function Home() {
     },
     loop: true,
     speed: 2000,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        centeredSlides: false,
+      },
+      1200: {
+        slidesPerView: 3,
+        centeredSlides: false,
+      },
+    },
   }
 
   return (
@@ -96,6 +106,19 @@ export default function Home() {
                   </Link>
                 </p>
               </li>
+
+              <li>
+                <span className={styles.promotionIcon}>
+                  <FaRegGrinAlt />
+                </span>
+                <p>
+                  <span>99% de satisfação!</span>
+                  <Link to="/">
+                    Confira as avaliações
+                    <FaAngleRight />
+                  </Link>
+                </p>
+              </li>
             </ul>
 
           </div>
@@ -130,7 +153,7 @@ export default function Home() {
           <div className="container">
             <h2 className="title">Testimonials</h2>
             <div className={styles.testimonia}>
-              <Swiper {...params}>
+              <Swiper {...params} >
                 {testimony.map((clienteInformation) => {
                   return (
                     <SwiperSlide key={clienteInformation.id}>

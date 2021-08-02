@@ -7,11 +7,11 @@
 
     .promotionsList {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: flex-start;
+      align-items: flex-start;
       flex-wrap: wrap;
-
-      gap: 1rem;
+      flex-direction: column;
+      gap: 1.875rem;
 
       li {
         display: flex;
@@ -19,11 +19,20 @@
         align-items: center;
         padding: 1rem 0;
         gap: 1rem;
+
+        span {
+
+          &.promotionIcon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
       }
 
       .promotionIcon {
         color: var(--textSecondaryColor);
-        font-size: 1.5rem;
+        font-size: 2.50rem;
       }
       p {
         font: 400 1rem Inter, sans-serif;
@@ -76,7 +85,7 @@
       .bannerIntroductionContent {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
         flex-direction: column;
 
         .titleBanner {
@@ -98,7 +107,7 @@
         }
 
         p {
-          text-align: left;
+          text-align: center;
           padding-top: 1.5rem;
           font: 400 1rem Lexend, sans-serif;
           line-height: 1.5;
@@ -183,22 +192,45 @@
   }
 }
 
+
+@media (min-width: 768px) {
+  #main {
+    .promotion {
+      .promotionsList {
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+      }
+    }
+    .portfolio {
+      width: 100%;
+
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+      }
+    }
+  }
+}
+
 @media (min-width: 992px) {
   #main {
     .introduction {
-
       .bannerIntroduction {
         gap: 2rem;
         align-items: center;
         flex-direction: row;
         text-align: left;
-      }
-    }
 
-    .promotion {
-      .promotionsList {
-        justify-content: space-between;
-        gap: 0rem;
+        .bannerIntroductionContent {
+          align-items: flex-start;
+          p {
+            text-align: left;
+          }
+        }
       }
     }
 
@@ -206,11 +238,27 @@
       width: 100%;
 
       .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         flex-direction: row;
         justify-content: space-between;
-        flex-wrap: wrap;
         align-items: stretch;
-        gap: 1.25rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  #main {
+
+    .portfolio {
+
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
       }
     }
   }

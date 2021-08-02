@@ -58,3 +58,29 @@
     color: var(--textPrimaryColor);
   }
 }
+
+@media (min-width: 768px) {
+  #rodape {
+    > div {
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .copy {
+      > div {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #rodape {
+    > div {
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+}
