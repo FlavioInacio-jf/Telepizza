@@ -183,6 +183,9 @@
         a {
           display: block;
           font-size: 1.125rem;
+          &::after {
+            position: absolute;
+          }
         }
       }
     }
