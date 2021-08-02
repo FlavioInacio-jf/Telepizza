@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import { useMediaQuery } from 'react-responsive';
 
 import { FaHome, FaPizzaSlice, FaInfo, FaUsers, FaBars, FaTimes, FaWhatsapp } from 'react-icons/fa';
 
@@ -9,15 +10,28 @@ import Link from '../Link';
 import Button from '../Button';
 import styles from './Menu.module.scss';
 import HeaderNotification from '../HeaderNotification';
+import { useEffect } from 'react';
 
 export default function Menu() {
 
+  const isLargeDevice = useMediaQuery({
+    query: '(min-width: 992px'
+  })
   const [isShowMenu, setShowMenu] = useState<Boolean>(false);
   const { isClose } = useNotification();
 
   function handleShowMenu() {
     setShowMenu(!isShowMenu);
   }
+
+  useEffect(() =>{
+    if(isLargeDevice) {
+      setShowMenu(true);
+    }
+    else {
+      setShowMenu(false);
+    }
+  }, [isLargeDevice])
 
   return (
     <>
@@ -48,7 +62,7 @@ export default function Menu() {
             <Image src={'/logo.png'} alt="Logo Pizzaria" objectFit="contain" layout="fill" className={styles.logo} />
           </Link>
 
-          <Button to={'https://api.whatsapp.com/send?phone=79992504020&text=Olá%20,%20Bem-vindo%20a%20melhor pizzaria%20do%20pais!!'} target="_blank">
+          <Button to={'https://api.whatsapp.com/send?phone=79992504020&text=Olá%20,%20Bem-vindo%20a%20melhor pizzaria%20do%20pais!!'} target="_blank" className={styles.button} style={{order: 2}}>
             <FaWhatsapp />
             Contact
           </Button>
