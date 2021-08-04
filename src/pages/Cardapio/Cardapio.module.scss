@@ -12,3 +12,53 @@
     }
   }
 }
+
+
+@media (min-width: 768px) {
+  .cardapio {
+    .listCardapio {
+      width: 100%;
+
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .cardapio {
+
+    .listCardapio {
+      width: 100%;
+
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+      }
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .cardapio {
+
+    .listCardapio {
+
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+      }
+    }
+  }
+}

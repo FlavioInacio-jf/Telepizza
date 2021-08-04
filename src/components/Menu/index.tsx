@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Component } from 'react';
 import Image from 'next/image';
 import { useMediaQuery } from 'react-responsive';
 
@@ -12,7 +12,8 @@ import styles from './Menu.module.scss';
 import HeaderNotification from '../HeaderNotification';
 import { useEffect } from 'react';
 
-export default function Menu() {
+export default function Menu () {
+
 
   const isLargeDevice = useMediaQuery({
     query: '(min-width: 992px'
@@ -31,6 +32,7 @@ export default function Menu() {
     else {
       setShowMenu(false);
     }
+    console.log(isShowMenu)
   }, [isLargeDevice])
 
   return (
