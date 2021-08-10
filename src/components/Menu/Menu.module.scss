@@ -1,10 +1,9 @@
-#header {
+.header {
   width: 100%;
   background: var(--backgroundSecondary);
   border-bottom: 1px solid #f2f2f2;
 
   > div {
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -38,12 +37,15 @@
 
     background: rgba(51, 51, 51, 0.7);
 
-    display: flex;
+    display: none;
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
     z-index: 100;
 
+    &.menuMobileOpen {
+      display: flex;
+    }
     .wrap {
       width: 17.5rem;
       height: 100%;
@@ -67,8 +69,8 @@
       button {
         font-size: 1.5rem;
         color: var(--textSecondaryColor);
-        top: .5rem;
-        right: .5rem;
+        top: 0.5rem;
+        right: 0.5rem;
         position: absolute;
         outline: none;
         transition: color 0.3s;
@@ -98,7 +100,7 @@
           margin-right: 1rem;
         }
         &::after {
-          content: "";
+          content: '';
           width: 0%;
           height: 0.25rem;
 
@@ -119,29 +121,11 @@
     }
   }
 
-}
-
-
-//Animation
-@keyframes fade-in-left {
-  from {
-    transform: translateX(-30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@media (min-width: 992px) {
-  #header {
+  &.menuDesktop {
     > div {
       gap: 2rem;
     }
-    .menuBarButton {
-      display: none;
-    }
+
     .logoContainer {
       flex: 1;
       order: 1;
@@ -149,7 +133,6 @@
       width: 100%;
       max-width: 10% !important;
     }
-
     .nav {
       flex: 2;
       order: 2;
@@ -169,7 +152,6 @@
         padding: 0;
       }
       .navbar {
-
         display: flex;
         align-items: center;
         gap: 2rem;
@@ -189,9 +171,22 @@
         }
       }
     }
-
-
+    .menuBarButton {
+      display: none;
+    }
   }
 
-
 }
+
+//Animation
+@keyframes fade-in-left {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
