@@ -47,7 +47,7 @@ export default function Menu() {
                 <Link to="/" className="current-page"><FaHome className={styles.iconDistance} />Home</Link>
                 <Link to="/Cardapio"><FaPizzaSlice className={styles.iconDistance} />Menu</Link>
                 <Link to="/Contact"><FaUsers className={styles.iconDistance} />Contact</Link>
-                <Link to='/About'><FaInfo className={styles.iconDistance} />About</Link>
+
               </div>
             </div>
           </nav>
@@ -58,7 +58,7 @@ export default function Menu() {
 
           <Button to={'https://api.whatsapp.com/send?phone=79992504020&text=Olá%20,%20Bem-vindo%20a%20melhor pizzaria%20do%20pais!!'} target="_blank" className={styles.button} style={{ order: 2 }}>
             <FaWhatsapp />
-            Contact
+            Fazer Pedido
           </Button>
 
         </div>
