@@ -15,24 +15,19 @@ export default function Menu() {
   const { isClose } = useNotification();
   const [isMenuMobileOpen, setMenuMobileOpen] = useState<Boolean>(false);
 
-  const [isMenuDesktop, setMenuDesktop] = useState<Boolean>(false);
-
   const handleMediaQueryChange = (matches: boolean) => {
-    setMenuDesktop(matches);
+    setMenuMobileOpen(false);
   }
 
   const isLargeDevice = useMediaQuery({ minWidth: 992 }, undefined, handleMediaQueryChange);
 
   const classNamesMobileOpen = isMenuMobileOpen ? `${styles['menuMobileOpen']} ${styles['nav']}` : styles.nav;
 
-  const classNamesMenuDesktop = isMenuDesktop ? `${styles['header']} ${styles['menuDesktop']}` : `${styles['header']}`;
-
-
   return (
     <>
       {isClose && <HeaderNotification />}
 
-      <header className={classNamesMenuDesktop}>
+      <header className={styles.header}>
         <div className="container">
           <button
             type="button"

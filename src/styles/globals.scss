@@ -570,9 +570,9 @@ body {
     color: var(--colorPrimary);
 
     &:hover {
-      background: none;
-      color: none;
-      filter: brightness(0.8);
+      background: var(--colorPrimary);
+      color: var(--textSecondaryColor);
+      filter: none;
     }
   }
   &:hover {

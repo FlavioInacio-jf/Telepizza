@@ -11,7 +11,7 @@ type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 export default function Button({children, to, ...props}: LinkProps) {
   return (
     <NextLink href={to} passHref>
-      <a {...props} className={styles.button}>
+      <a {...props} className={'btn' + ' btn-outline'}>
         {children}
       </a>
     </NextLink>
