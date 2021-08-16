@@ -1,7 +1,6 @@
 import { useState, Component } from 'react';
 import Image from 'next/image';
 import { useMediaQuery } from 'react-responsive';
-import cx from 'classnames';
 
 import { FaHome, FaPizzaSlice, FaInfo, FaUsers, FaBars, FaTimes, FaWhatsapp } from 'react-icons/fa';
 
@@ -14,10 +13,9 @@ import HeaderNotification from '../HeaderNotification';
 
 export default function Menu() {
   const { isClose } = useNotification();
-  const [isShowMenu, setShowMenu] = useState<Boolean>();
   const [isMenuMobileOpen, setMenuMobileOpen] = useState<Boolean>(false);
 
-  const [isMenuDesktop, setMenuDesktop] = useState<Boolean>();
+  const [isMenuDesktop, setMenuDesktop] = useState<Boolean>(false);
 
   const handleMediaQueryChange = (matches: boolean) => {
     setMenuDesktop(matches);

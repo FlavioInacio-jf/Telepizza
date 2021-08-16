@@ -38,7 +38,13 @@ export default function Card({data}: CardProps) {
                 <span className={styles.priceNew}><span>Por:</span> R$ {data.pricenew.toFixed(2).replace('.', ',')}</span>
               </div>
               <div className={styles.buttonToCard}>
-                <Link to="/" className="btn">
+                {
+                  console.log(data.title.replace(' ', '%20'))
+                }
+                <Link
+                  to={`https://api.whatsapp.com/send?phone=79992504020&text=Meu %20pedido%20%20é:%20${data.title.replace(' ', '%20')}`}   className="btn"
+                  target="_blank"
+                >
                   <FaWhatsapp />
                   Marker order
                 </Link>
