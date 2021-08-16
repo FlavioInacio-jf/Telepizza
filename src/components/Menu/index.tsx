@@ -14,28 +14,27 @@ import HeaderNotification from '../HeaderNotification';
 
 export default function Menu() {
   const { isClose } = useNotification();
-
   const [isShowMenu, setShowMenu] = useState<Boolean>();
-
   const [isMenuMobileOpen, setMenuMobileOpen] = useState<Boolean>(false);
 
-  function handleShowMenu(state: boolean) {
-    setShowMenu(state);
-  }
+  const [isMenuDesktop, setMenuDesktop] = useState<Boolean>();
 
-  const handleMediaQueryChange = (matches) => {
-    handleShowMenu(matches);
+  const handleMediaQueryChange = (matches: boolean) => {
+    setMenuDesktop(matches);
   }
 
   const isLargeDevice = useMediaQuery({ minWidth: 992 }, undefined, handleMediaQueryChange);
 
-  const classNames = isMenuMobileOpen ? `${styles['menuMobileOpen']} ${styles['nav']}` : styles.nav;
+  const classNamesMobileOpen = isMenuMobileOpen ? `${styles['menuMobileOpen']} ${styles['nav']}` : styles.nav;
+
+  const classNamesMenuDesktop = isMenuDesktop ? `${styles['header']} ${styles['menuDesktop']}` : `${styles['header']}`;
+
 
   return (
     <>
       {isClose && <HeaderNotification />}
 
-      <header className={cx(styles.header, { menuDesktop: isShowMenu })}>
+      <header className={classNamesMenuDesktop}>
         <div className="container">
           <button
             type="button"
@@ -44,7 +43,7 @@ export default function Menu() {
           >
             {isMenuMobileOpen ? <FaTimes /> : <FaBars />}
           </button>
-          <nav className={classNames} onClick={() => setMenuMobileOpen(!isMenuMobileOpen)}>
+          <nav className={classNamesMobileOpen} onClick={() => setMenuMobileOpen(!isMenuMobileOpen)}>
             <div className={styles.wrap}>
               <div className={'grid ' + styles.navbar} >
                 <Link to="/" className="current-page"><FaHome className={styles.iconDistance} />Home</Link>
