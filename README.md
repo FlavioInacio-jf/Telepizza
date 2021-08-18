@@ -4,7 +4,7 @@
 	📱 Telepizza
 </h1>
 <h3 align="center">
-    🌱 O que acha de voltar no tempo e tentar relembrar como era o Orkut? Esse é o intuito dessa aplicação. Um rede social repaginada e com um novo proposito. Aproveitem!!!💚
+    🌱 Está com fome? O que achá de pedir uma pizza através de um site moderno? ou até mesmo bonito? O Telepizza foi criado com este intuito.  Espero que aproveitem!!!💚
 </h3>
 
 <p align="center">
@@ -33,17 +33,16 @@
 
 ## 💻 Sobre o projeto
 
-O projeto Hubork foi desenvolvido durante a imersão react da Alura. A aplicação é feita utilizando React e NextJS. Durante a imersão, varios topicos foram abordados, como, fetch, request/response, styled components, autenticação, etc. O Dado CMS foi utilizado como Back-End. Com isso, foi possivel armazenar os dados criado pelo usuário. 
+O **[Telepizza](https://pizzaria-react-js.vercel.app/)** foi desenvolvido com o objetivo de colocar os conhecimentos adiquiridos em varios eventos, como NLW. O projeto é feito utlizando o Nextjs e o conceito de SPA. O Dato CMS é utlizado para criar ou editar os cardápios e feedback dos clientes. 
 
 ---
 
 ## ⚙️ Funcionalidades
 
-- Se conecte com perfil do Github
-- Tenha acesso a varias informações do seu Github
-- Adicionar comunidades
-- Excluir e destacar perguntas(Administrador)
-- Encerrar sala(Administrador)
+- Adicionar o cardapio
+- Adicionar feedback dos clientes
+- A Compra da pizza integrada ao Whatsapp
+
 ---
 
 
@@ -62,10 +61,10 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 ```bash
 
 # Clone este repositório
-$ git clone https://github.com/FlavioInacio-jf/letmeask
+$ git clone https://github.com/FlavioInacio-jf/telepizza
 
 # Acesse a pasta do projeto no seu terminal/cmd
-$ cd orkut
+$ cd telepizza
 
 # Instale as depêndencias
 $ yarn
