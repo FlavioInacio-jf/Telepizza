@@ -61,10 +61,10 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 ```bash
 
 # Clone este repositório
-$ git clone https://github.com/FlavioInacio-jf/telepizza
+$ git clone https://github.com/FlavioInacio-jf/Telepizza
 
 # Acesse a pasta do projeto no seu terminal/cmd
-$ cd telepizza
+$ cd Telepizza
 
 # Instale as depêndencias
 $ yarn
